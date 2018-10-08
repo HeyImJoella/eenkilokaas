@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Niramit');
 
 
 body{
-  font-family: 'Source+Sans+Pro', sans-serif;
+  font-family: 'Niramit', sans-serif;
   width:100%;
   margin:0;
 }
@@ -15,7 +16,7 @@ body{
 
 h2{
   font-weight: lighter;
-  font-family: 'Source+Sans+Pro', sans-serif;
+  font-family: 'Niramit', sans-serif;
 }
 
 h1{
@@ -25,7 +26,7 @@ h1{
 
 p{
   margin:0px;
-  font-family: 'Source+Sans+Pro', sans-serif;
+  font-family: 'Niramit', sans-serif;
   line-height: 20px;
 }
 
@@ -176,7 +177,7 @@ a{
 .passie-container{
   display:grid;
   background:#F4B00D;
-  margin:0rem 0.7rem 0.7rem 0.7rem;
+  margin:0rem 0.7rem 0.7rem;
   padding:0.9rem;
 }
 
@@ -193,15 +194,18 @@ a{
   max-width: 100%;
 }
 
-.iedereen{
+.content-container{
+  display:grid;
+  margin:0.7rem;
+  padding:0.9rem;
+}
+
+.yellowbackground{
   background:#F4B00D;
 }
 
-.iedereen-container{
-  display:grid;
+.iedereen{
   background:#F4B00D;
-  margin:0.7rem;
-  padding:0.9rem;
 }
 
 .familie-image{
@@ -213,13 +217,6 @@ a{
 
 .liefde{
   background:#F4B00D;
-}
-
-.liefde-container{
-  display:grid;
-  background:#F4B00D;
-  margin:0.7rem;
-  padding:0.9rem;
 }
 
 .liefde-image{
@@ -234,6 +231,10 @@ a{
   display:grid;
 }
 
+.brownbackground{
+  background:#9C8165;
+}
+
 .text-center{
   text-align:center;
 }
@@ -243,17 +244,16 @@ a{
   display:grid;
 }
 
-.voorstellen-container{
-  display:flex:
-  justify-content:center;
-  margin:0.7rem;
-  padding:0.9rem;
-}
-
 .bruin-titel{
   color:#271F16;
   font-weight: lighter;
   font-size:1.5rem;
+}
+
+.voorstellentitel{
+  color:#271F16;
+  font-weight: lighter;
+  font-size:1.1rem;
 }
 
 .bruin-text{
@@ -277,9 +277,37 @@ hr{
   margin-top:10px;
 }
 
-.content-container{
-  margin:0.7rem;
-  padding:0.9rem;
+.personeel{
+  background: #9C8165;
+  display: grid;
+}
+
+.center{
+  justify-content: center;
+}
+
+.info-blok-black{
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px 30px;
+  max-width: 240px;
+  height: 320px;
+  text-align: left;
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);
+}
+
+.icoon{
+  vertical-align: middle;
+}
+
+.personeelnaam{
+  color:#FFB608;
+  font-weight:bold;
+  letter-spacing:1px;
+  margin-bottom: 15px;
+}
+
+.text-white{
+
 }
 
 /*Telefoon*/
