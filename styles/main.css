@@ -24,14 +24,67 @@ h1{
   font-family: 'Source+Sans+Pro', sans-serif;
 }
 
-h2{
-  font-family: 'Source+Sans+Pro', sans-serif;
-}
-
 p{
   margin:0px;
   font-family: 'Niramit', sans-serif;
   line-height: 20px;
+}
+
+a{
+  margin:0px;
+  font-family: 'Niramit', sans-serif;
+  line-height: 20px;
+}
+
+.testheight {
+  height:1200px;
+  font-size:20px;
+  text-align:center;
+  padding:100px 20px;
+}
+.scrolltop {
+  display:none;
+  width:100%;
+  margin:0 auto;
+  position:fixed;
+  bottom:20px;
+  right:10px; 
+}
+.scroll {
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  background:#fff;
+  border-radius: 10px;
+  background:rgba(178,178,178,0.7);
+  padding:10px;
+  text-align: center;
+  margin: 0 0 0 0;
+  cursor:pointer;
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;    
+}
+.scroll:hover {
+  background:rgba(178,178,178,1.0);
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;    
+}
+.scroll:hover .fa {
+  padding-top:-10px;
+}
+.scroll .fa {
+  font-size:0.9rem;
+  font-family: 'Niramit', sans-serif;
+  margin-top:-5px;
+  margin-left:1px;
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;  
 }
 
 .landingpage-subtitle{
@@ -86,16 +139,105 @@ p{
   margin-top: 15%;
 }
 
-label {
+/* Hamburger menu*/
+#toggle {
   display: block;
-  cursor: pointer;
+  width: 28px;
+  height: 30px;
+  margin: 30px auto 10px;
 }
-.menu {
+
+#toggle span:after,
+#toggle span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -9px;
+}
+#toggle span:after{
+  top: 9px;
+}
+#toggle span {
+  position: relative;
+  display: block;
+}
+
+#toggle span,
+#toggle span:after,
+#toggle span:before {
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  border-radius: 2px;
+}
+#toggle.on span {
+  background-color: transparent;
+}
+#toggle.on span:before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+#toggle.on span:after {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+#toggle.on + #menu {
+  opacity: 1;
+  visibility: visible;
+}
+/* Menu uiterlijk*/
+#menu {
+  position: relative;
+  color: #fff;
+  width: 200px;
+  padding: 10px;
+  margin: auto;
+  font-family: 'Source+Sans+Pro', sans-serif;
+  font-size:1rem;
+  text-align: center;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .4s;
+}
+#menu:after {
+  position: absolute;
+  top: -15px;
+  left: 95px;
+  content: "";
+  display: block;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 20px solid white;
+}
+ul, li, li a {
+  list-style: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+li a {
+  padding: 5px;
+  color: #481D0E;
+  text-decoration: none;
+  transition: all .2s;
+}
+li a:hover,
+li a:focus {
+  background: #F4B00D;
+  color: #fff;
+}
+
+
+
+/*#menu {
   text-align: center;
   width: 100%;
   display: none;
 }
-.menu a {
+#menu a {
   display: block;
   border-bottom: 1px solid #EAEAEB;
   margin: 0;
@@ -105,13 +247,22 @@ label {
   cursor:pointer;
 }
 
+#toggle:checked + .menu {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #e2e2e2;
+  transition:500ms ease-in;
+} */
+
 .hamburger{
    font-size:1.6rem;
 }
 
-#toggle:checked + .menu {
-  display: block;
-} 
+
 
 .landingpage-container{
   grid-area:main;
@@ -219,6 +370,10 @@ a{
   max-height:auto;
   margin:0;
 }
+.mood-image img {
+  display: block;
+  width: 100%;
+}
 
 hr{
   height: 0;
@@ -298,10 +453,11 @@ hr{
 
 .brownbackground{
   background:#9C8165;
+  padding:5rem;
 }
 
 .text-center{
-  text-align:center;
+  text-align:center; 
 }
 
 .voorstellen{
@@ -328,11 +484,6 @@ hr{
   padding-bottom:10px;
 }
 
-.personeel{
-  background: #9C8165;
-  display: grid;
-}
-
 .center{
   justify-content: center;
 }
@@ -340,7 +491,7 @@ hr{
 .info-blok-black{
   background-color: rgba(0, 0, 0, 0.6);
   padding: 30px 30px;
-  max-width: 239px;
+  max-width: 240px;
   height: 320px;
   text-align: left;
   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);
@@ -357,140 +508,219 @@ hr{
   margin-bottom: 15px;
 }
 
-.text-white{
+.team-titel{
+  margin-top:30px;
+}
 
+.personeel{
+  background: #9C8165;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+
+.collegaruimte{
+  padding:1rem;
+}
+
+.container{
+  display:flex;
+  flex-basis:0;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  padding-top:50px;
 }
 
 /*Tablet*/
 @media screen and (min-width: 766px) {
-#logo{
-  max-width: 125px;
-}
-.hamburger{
-   font-size:2rem;
-}
-.landingtitel{
+  #logo{
+    max-width: 125px;
+  }
+  .hamburger{
+    font-size:2rem;
+  }
+  .landingtitel{
     font-size:2.2rem;
-}
-.landingpage-subtitle{
+  }
+  .landingpage-subtitle{
     font-size:0.7rem;
-}
-.button-opmaak{
-  font-size:0.7rem;
-  width:170px;
-}
-.icon-arrow-down-thin{
-  font-size:1.7rem;
-}
-.passie-container{
-  padding:3.5rem;
-}
-.content-container{
-  padding:3.5rem;
-}
-.nummer{
-  font-size:2.2rem;
-}
-.info-titel{
-  font-size:2.2rem;
-}
-.info-text{
-  font-size:1.1rem;
-}
-.info-text-2{
-  font-size:1.1rem;
-}
-hr{
-  width:100px;
-}
-.info-blok-black{
-  max-width: 272px;
-  height: 400px;
-}
+  }
+  .button-opmaak{
+    font-size:0.7rem;
+    width:170px;
+  }
+  .icon-arrow-down-thin{
+    font-size:1.7rem;
+  }
+  .mood-image img {
+    height: 100%;
+  }
+  .content-container{
+    padding:5rem;
+  }
+  .team-titel{
+    margin-top:15px;
+  }
+  .collegaruimte{
+    padding:2rem;
+  }
+  .info-text{
+    font-size:0.9rem;
+  }
+  .info-text-2{
+    font-size:0.9rem;
+  }
+  .info-blok-black{
+    width: 220px;
+    height: 370px;
+  }
+  .icoon{
+    width:100%;
+    height: 260px;
+  }
+  .brownbackground{
+    background:#9C8165;
+    padding:2rem;
+  }
 }
 
 
 /*Notepad*/
-@media screen and (min-width: 1365px) {
-/*.item1 { grid-area: header; 
-border: 1px solid green;}
-.item2 { grid-area: image; }
-.item3 { grid-area: main; }
-.item4 { grid-area: main2; }
-.item5 { grid-area: image2; }
-.item6 { grid-area: image3; }
-.item7 { grid-area: main3; }
-
-.koepel{
-  display:grid;
-  grid-template-areas:
-    'header header header header header header'
-    'image image image main main main'
-    'image2 image2 image2 main2 main2 main2'
-    'image3 image3 image3 main3 main3 main3';
-}
-.sfeerimpressie-passie{
-  max-width:50%;
-  max-height:auto;
-  margin:0;
-}
-.sfeerimpressie-iedereen{
-  max-width:50%;
-  max-height:auto;
-  margin:0;
-}
-.sfeerimpressie-liefde{
-  max-width:50%;
-  max-height:auto;
-  margin:0;
-}*/
-#logo{
-  max-width: 125px;
-}
-.hamburger{
-   font-size:2rem;
-}
-.landingtitel{
+@media screen and (min-width: 1100px) {
+  #logo{
+    max-width: 150px;
+  }
+  .hamburger{
+    font-size:2.5rem;
+  }
+  .landingtitel{
     font-size:2.2rem;
-}
-.landingpage-subtitle{
+  }
+  .landingpage-subtitle{
     font-size:0.7rem;
-}
-.button-opmaak{
-  font-size:0.7rem;
-  width:170px;
-}
-.icon-arrow-down-thin{
-  font-size:1.7rem;
-}
-.passie-container{
-  padding:3.5rem;
-}
-.content-container{
-  padding:3.5rem;
-}
-.nummer{
-  font-size:2rem;
-}
-.info-titel{
-  font-size:2rem;
-}
-.info-text{
-  font-size:0.9rem;
-}
-.info-text-2{
-  font-size:0.9rem;
-}
-hr{
-  width:100px;
-}
-.info-blok-black{
-  max-width: 272px;
-  height: 400px;
-}
+  }
+  .button-opmaak{
+    font-size:0.7rem;
+    width:170px;
+  }
+  .icon-arrow-down-thin{
+    font-size:1.9rem;
+  }
+  .mood-image img {
+    height: 100%;
+  }
+  .content-container{
+    padding:5rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .sfeerimpressie-iedereen {
+    grid-column: 2/1;
+    grid-row: 2;
+  }
+  .content-container{
+   display:grid;
+   padding:2rem;
+  }
+  .mood-image img {
+    height: 100%;
+  }
+  .text-left{
+    padding-right:20%;
+    text-align:left;
+  }
+  .text-right{
+    text-align:right;
+    padding-left:20%;
+  }
+  .team{
+    padding-left:20%;
+    padding-right:20%;
+  }
+  .text-center2{
+    text-align:center; 
+  }
+  .info-blok-black{
+    width: 220px;
+    max-height: 450px;
+  }
+  .icoon{
+    width:100%;
+    height: 260px;
+  }
 }
  
 /*Desktop*/
 @media screen and (min-width: 1919px) {
-
+  #logo{
+    max-width: 200px;
+  }
+  .hamburger{
+    font-size:3rem;
+  }
+  .landingtitel{
+    font-size:2.7rem;
+  }
+  .landingpage-subtitle{
+    font-size:0.9rem;
+  }
+  .button-opmaak{
+    font-size:0.8rem;
+    width:210px;
+  }
+  .icon-arrow-down-thin{
+    font-size:2rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .sfeerimpressie-iedereen {
+    grid-column: 2/1;
+    grid-row: 2;
+  }
+  .content-container{
+   display:grid;
+   padding:3.5rem;
+  }
+  .nummer{
+    font-size:2.2rem;
+  }
+  .info-titel{
+    font-size:2.2rem;
+  }
+  .info-text{
+    font-size:1rem;
+  }
+  .info-text-2{
+    font-size:1rem;
+  }
+  .mood-image img {
+    height: 100%;
+  }
+  .text-left{
+    padding-right:35%;
+    text-align:left;
+  }
+  .text-right{
+    text-align:right;
+    padding-left:35%;
+  }
+  .text-center2{
+    text-align:center; 
+  }
+  .info-blok-black{
+    width: 220px;
+    max-height: 450px;
+  }
+  .icoon{
+    width:100%;
+    height: 260px;
+  }
 }
