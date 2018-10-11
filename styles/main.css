@@ -166,7 +166,7 @@ a{
 #toggle span:after,
 #toggle span:before {
   width: 100%;
-  height: 5px;
+  height: 3px;
   background-color: #fff;
   transition: all 0.3s;
   backface-visibility: hidden;
@@ -659,20 +659,20 @@ hr{
 /*Desktop*/
 @media screen and (min-width: 1919px) {
   #logo{
-    max-width: 200px;
+    max-width: 150px;
   }
   .hamburger{
-    font-size:3rem;
+    font-size:2.5rem;
   }
   .landingtitel{
-    font-size:2.7rem;
+    font-size:2.3rem;
   }
   .landingpage-subtitle{
-    font-size:0.9rem;
+    font-size:0.7rem;
   }
   .button-opmaak{
-    font-size:0.8rem;
-    width:210px;
+    font-size:0.6rem;
+    width:150px;
   }
   .icon-arrow-down-thin{
     font-size:2rem;
@@ -690,16 +690,16 @@ hr{
    padding:3.5rem;
   }
   .nummer{
-    font-size:2.2rem;
+    font-size:2rem;
   }
   .info-titel{
-    font-size:2.2rem;
+    font-size:2rem;
   }
   .info-text{
-    font-size:1rem;
+    font-size:0.8rem;
   }
   .info-text-2{
-    font-size:1rem;
+    font-size:0.8rem;
   }
   .mood-image img {
     height: 100%;
